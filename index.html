@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript File Encryption App</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="http://fonts.googleapis.com/css?family=Raleway:400,700"
+      rel="stylesheet"
+    />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="stage">
+      <div
+        id="step1"
+        style="
+          background-image: url('assets/img/img.jfif');
+          background-position: center;
+        "
+      >
+        <div class="content">
+          <h1 class="px-5">What do you want to do?</h1>
+          <input type="file" id="encrypt-iput" />
+          <a class="button encrypt bg-info"
+            ><span class="text-dark">&ensp;Encrypt a file</span></a
+          >
+          <a class="button decrypt magenta">&ensp;Decrypt a file</a>
+        </div>
+      </div>
+
+      <div id="step2">
+        <a class="back1"></a>
+        <a class="back nav-link text-white">Home</a>
+        <div class="content if-encrypt">
+          <h1 class="px-5">Choose which file to encrypt</h1>
+          <h2 class="px-5 text-warning">
+            An encrypted copy of the file will be generated.
+          </h2>
+          <p class="text-danger"><span class="text-white">Max:</span> 20MB</p>
+          <a class="button browse bg-primary">&ensp;Browse</a>
+          <input type="file" id="encrypt-input" />
+        </div>
+
+        <div class="content if-decrypt">
+          <h1 class="px-5">Choose which file to decrypt</h1>
+          <h2 class="px-5 text-warning">
+            Only files encrypted by this tool can be decrypted.
+          </h2>
+          <a class="button browse blue">&ensp;Browse</a>
+
+          <input type="file" id="decrypt-input" />
+        </div>
+      </div>
+
+      <div id="step3">
+        <a class="back2"></a>
+        <a class="back nav-link text-white">Home</a>
+        <div class="content if-encrypt">
+          <h1 class="px-5">Enter a pass phrase</h1>
+          <h2 class="px-5 text-danger">
+            <p>
+              This phrase will be used as an encryption key. Write it down or
+                remember it;
+            </p>
+            <p>
+              It must NOT be less than 5 characters (alphanumeric)
+            </p>
+            
+          </h2>
+          <input type="password" />
+          <a class="button process red">&ensp;Encrypt!</a>
+        </div>
+
+        <div class="content if-decrypt">
+          <h1 class="px-5">Enter the pass phrase</h1>
+          <h2 class="px-5 text-danger">
+            Enter the pass phrase that was used to encrypt this file. It is not
+            possible to decrypt it without it.
+          </h2>
+
+          <input type="password" />
+          <a class="button process red">Decrypt!</a>
+        </div>
+      </div>
+
+      <div id="step4">
+        <a class="back3"></a>
+        <a class="back">Home</a>
+        <div class="content">
+          <h1>Your file is ready!</h1>
+          <a class="button download green">Download</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="p-4 bg-warning text-center">
+      <span
+        >A Project Design by |
+        <i class="text-white">Group V</i>
+      </span>
+    </footer>
+  </body>
+
+  <!-- Include the AES algorithm of the crypto library -->
+  <script src="assets/js/aes.js"></script>
+
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/script.js"></script>
+</html>
